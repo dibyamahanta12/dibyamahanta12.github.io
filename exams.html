@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upcoming Exams</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <h1>Upcoming Exams</h1>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="exams.html">Exams</a>
+  </nav>
+</header>
+
+<main class="container">
+  <ul id="exam-list"></ul>
+  <section id="exam-details" style="display:none; margin-top:20px; padding:15px; border:1px solid #ddd; border-radius:10px;"></section>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Exam Alerts</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+fetch('exams.json')
+  .then(response => response.json())
+  .then(data => {
+    const list = document.getElementById('exam-list');
+    data.forEach((exam, index) => {
+      let li = document.createElement('li');
+      li.innerHTML = `<button onclick="showExam(${index})">${exam.name}</button>`;
+      list.appendChild(li);
+    });
+
+    window.showExam = function(index) {
+      const exam = data[index];
+      const details = document.getElementById('exam-details');
+      details.style.display = "block";
+      details.innerHTML = `
+        <h2>${exam.name}</h2>
+        <p><strong>Notification Date:</strong> ${exam.notification_date}</p>
+        <p><strong>Apply Start:</strong> ${exam.apply_start}</p>
+        <p><strong>Apply End:</strong> ${exam.apply_end}</p>
+        <p><strong>Exam Date:</strong> ${exam.exam_date}</p>
+        <p><a href="${exam.notification_pdf}" target="_blank">Download Notification PDF</a></p>
+        <p><a href="${exam.website}" target="_blank">Official Website</a></p>
+      `;
+    };
+  });
+</script>
+</body>
+</html>
