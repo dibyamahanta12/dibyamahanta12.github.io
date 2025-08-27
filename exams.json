@@ -1,0 +1,20 @@
+[
+  {
+    "name": "UPSC CSE 2025",
+    "notification_date": "February 2025",
+    "apply_start": "12 Feb 2025",
+    "apply_end": "05 Mar 2025",
+    "exam_date": "June 2025",
+    "notification_pdf": "https://upsc.gov.in/upsc-cse-2025.pdf",
+    "website": "https://upsc.gov.in"
+  },
+  {
+    "name": "SSC CGL 2025",
+    "notification_date": "April 2025",
+    "apply_start": "15 Apr 2025",
+    "apply_end": "10 May 2025",
+    "exam_date": "Sept 2025",
+    "notification_pdf": "https://ssc.nic.in/ssc-cgl-2025.pdf",
+    "website": "https://ssc.nic.in"
+  }
+]
