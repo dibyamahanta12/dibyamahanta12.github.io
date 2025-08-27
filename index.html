@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exam Alerts Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <h1>Exam Alerts Portal</h1>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="exams.html">Exams</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h2>Welcome</h2>
+    <p>This site provides alerts for upcoming competitive exams.</p>
+    <a class="button" href="exams.html">View Upcoming Exams</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Exam Alerts</p>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
